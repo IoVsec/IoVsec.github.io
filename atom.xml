@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-10-23T01:47:02.641Z</updated>
+  <updated>2024-10-23T10:13:20.954Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CAN总线协议</title>
+    <link href="http://example.com/2024/10/23/CAN%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE/"/>
+    <id>http://example.com/2024/10/23/CAN%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE/</id>
+    <published>2024-10-23T08:00:21.614Z</published>
+    <updated>2024-10-23T10:13:20.954Z</updated>
+    
+    <content type="html"><![CDATA[<p class='item-img' data-src='https://s21.ax1x.com/2024/10/23/pAdg3h4.png'><img src="https://s21.ax1x.com/2024/10/23/pAdg3h4.png"></p><h3 id="车载总线协议发展的前提"><a href="#车载总线协议发展的前提" class="headerlink" title="车载总线协议发展的前提"></a>车载总线协议发展的前提</h3><p>在汽车发展的早期，汽车的ECU采用点对点的通信方式，也就是说在每两个ECU之间就会有一条用于数据传输的线缆。随着汽车的功能越来越丰富，用于实现这些功能和服务的车载传感器和ECU的数量也在持续上升，现在一辆汽车的ECU可能高达几百个。那么如果仍然采用早期的方案，汽车的线缆可能会呈现指数级的增长。这不仅导致汽车的重量增加，还使得线缆的难以维护和修理。</p><p>于是在这种背景下汽车总线的概念就应运而生，目前主流的总线协议有CAN，FlexRay，LIN以及MOST这4种总线协议，未来车载总线将往以太网方向发展。</p><h3 id="CAN总线概述"><a href="#CAN总线概述" class="headerlink" title="CAN总线概述"></a>CAN总线概述</h3><p>CAN总线是一个古老的总线协议，最早可追溯到上个世纪的80年代，由德国的Bosch公司研发的。但是CAN总线仍然是现在汽车内部网络广泛使用的通信总线，由两条双绞线构成，一条为CAN_H，另外一条为CAN_L。在双绞线的两端各有120欧的电阻，用于匹配总线阻抗，提高数据通信的抗干扰性及可靠行。双绞线周围分布的是各个ECU节点。</p><p>一般在汽车中转速管理和制动用高速总线进行，而对于门锁和空调控制之类的非关键通信，则通过中低速总线进行。</p><p>CAN总线采用差分信号，当信号输入的时候，CAN提升一条线的电平，并在另一条线上降低同样的电平。传感器与ECU中有一个收发器，该收发器确保两种信号均被触发，假如没有被同时触发，收发器将该数据视为噪声丢掉。</p><p>CAN总线类似于局域网通信的ARP协议，在BUS干线上采用广播的形式传输信息，也就是说在同一条干线上的所有节点都会接收到来自干线的所有报文数据包。这就好像教室里老师给学生上课一样。</p><p>当多个节点都要发送数据的时候就会存在冲突，CAN总线必须决定那个节点可以发送，哪些节点必须等待。总裁是CAN总线的协议的重要特性，总线上每一个节点都有唯一的ID，ID大小决定发送的优先级，ID小优先发送。</p><p>仲裁机制本质上是借助显性覆盖隐性的机制，CAN总线的差分电平分为显性电平和隐性电平。显性电平的逻辑是0，隐性电平的逻辑是1。在同一位时间，一个节点发送显性电平，另外一个节点发送隐性电平，则总线电平为显性电平。(0&amp;1&#x3D;0)这就是CAN总线仲裁的基础。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p class=&#39;item-img&#39; data-src=&#39;https://s21.ax1x.com/2024/10/23/pAdg3h4.png&#39;&gt;&lt;img src=&quot;https://s21.ax1x.com/2024/10/23/pAdg3h4.png&quot;&gt;&lt;/p&gt;
+&lt;h3 i</summary>
+      
+    
+    
+    
+    
+    <category term="车联网安全" scheme="http://example.com/tags/%E8%BD%A6%E8%81%94%E7%BD%91%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
